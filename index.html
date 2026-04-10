@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北九州 5天4夜 旅遊行程 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#FAF7F2; --warm-white:#FFFEF9; --ink:#1A1410; --ink-mid:#3D3020;
+  --ink-soft:#6B5B45; --ink-faint:#9C8A72;
+  --rust:#B84A2A; --rust-light:#D4623E; --rust-pale:#F4E5DE; --rust-mid:#EDCFC4;
+  --gold:#A07830; --gold-light:#C4A050; --gold-pale:#F5EDD6;
+  --teal:#256858; --teal-light:#3A8F72; --teal-pale:#D4EDE5;
+  --indigo:#324070; --indigo-light:#4A5C96; --indigo-pale:#DDE3F2;
+  --border:#E0D4C0; --border-light:#EDE5D5;
+  --sh-sm:0 1px 4px rgba(26,20,16,.06);
+  --sh-md:0 3px 12px rgba(26,20,16,.09);
+  --sh-lg:0 6px 24px rgba(26,20,16,.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--ink);font-size:18px;line-height:1.75;}
+
+/* HERO */
+.hero{background:var(--ink);color:var(--cream);padding:56px 24px 48px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 15% 60%,rgba(176,72,42,.22) 0%,transparent 55%),radial-gradient(ellipse 55% 65% at 85% 35%,rgba(160,120,48,.18) 0%,transparent 50%);pointer-events:none;}
+.hero-eyebrow{font-family:'Noto Serif TC',serif;font-size:13px;letter-spacing:.3em;color:var(--gold-light);margin-bottom:14px;}
+.hero h1{font-family:'Noto Serif TC',serif;font-size:clamp(26px,5.5vw,46px);font-weight:700;line-height:1.25;margin-bottom:12px;}
+.hero h1 em{color:var(--rust-light);font-style:normal;}
+.hero-desc{font-size:clamp(14px,2vw,16px);color:rgba(250,247,242,.6);max-width:460px;margin:0 auto 28px;line-height:1.65;}
+.hero-hotels{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.hero-hotel-tag{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:30px;padding:7px 16px;font-size:13px;color:rgba(250,247,242,.82);line-height:1.4;}
+.hero-hotel-tag strong{color:var(--gold-light);}
+
+/* STICKY NAV */
+.tab-nav{position:sticky;top:0;z-index:200;background:var(--warm-white);border-bottom:1.5px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;padding:0 12px;}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{flex-shrink:0;padding:16px 18px 14px;border:none;border-bottom:3px solid transparent;background:transparent;cursor:pointer;font-family:'Noto Sans TC',sans-serif;font-size:14px;font-weight:500;color:var(--ink-faint);transition:color .2s,border-color .2s;white-space:nowrap;text-align:center;line-height:1.35;}
+.tab-btn:hover{color:var(--ink-mid);}
+.tab-btn.active{color:var(--rust);border-bottom-color:var(--rust);}
+.tab-btn .t-date{font-size:11px;display:block;margin-bottom:2px;}
+.tab-btn .t-name{font-size:13px;display:block;}
+
+/* LAYOUT */
+.container{max-width:800px;margin:0 auto;padding:0 20px;}
+.day-panel{display:none;padding:36px 0 64px;animation:fadeIn .25s ease;}
+.day-panel.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+/* DAY HEADER CARD */
+.day-card{background:var(--warm-white);border:1px solid var(--border);border-radius:16px;padding:24px 24px 20px;margin-bottom:28px;box-shadow:var(--sh-md);}
+.day-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px;}
+.day-label{font-family:'Noto Serif TC',serif;font-size:12px;font-weight:600;letter-spacing:.15em;color:var(--rust);margin-bottom:5px;}
+.day-title{font-family:'Noto Serif TC',serif;font-size:clamp(18px,3.5vw,23px);font-weight:700;line-height:1.3;color:var(--ink);}
+.day-date-pill{background:var(--ink);color:var(--cream);border-radius:8px;padding:5px 13px;font-size:12px;white-space:nowrap;flex-shrink:0;font-family:'Noto Serif TC',serif;letter-spacing:.03em;}
+.hotel-strip{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--indigo-pale);border-radius:8px;font-size:14px;color:var(--indigo);}
+.hotel-strip .hs-icon{font-size:18px;flex-shrink:0;}
+.hotel-strip .hs-name{font-weight:600;font-size:13px;}
+.hotel-strip .hs-addr{font-size:12px;color:var(--indigo-light);margin-top:1px;}
+.change-strip{display:flex;align-items:flex-start;gap:9px;padding:10px 14px;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;font-size:13px;color:var(--teal);margin-top:10px;}
+
+/* SNACK STRIP */
+.snack-section{margin-bottom:24px;}
+.snack-title{font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.06em;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.snack-row{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
+.snack-row::-webkit-scrollbar{display:none;}
+.snack-card{flex-shrink:0;width:175px;background:var(--warm-white);border:1px solid var(--border-light);border-radius:12px;padding:12px 13px;box-shadow:var(--sh-sm);}
+.sc-emoji{font-size:22px;margin-bottom:5px;}
+.sc-name{font-size:13px;font-weight:700;color:var(--ink-mid);line-height:1.3;margin-bottom:2px;}
+.sc-place{font-size:11px;color:var(--ink-faint);margin-bottom:4px;}
+.sc-desc{font-size:12px;color:var(--ink-soft);line-height:1.5;}
+.sc-rating{font-size:11px;color:var(--gold);margin-top:4px;}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:11px;top:14px;bottom:14px;width:2px;background:linear-gradient(to bottom,var(--rust-mid),var(--gold-pale),var(--border));border-radius:2px;}
+.ev-wrap{position:relative;margin-bottom:10px;}
+.ev-dot{position:absolute;left:-27px;top:16px;width:14px;height:14px;border-radius:50%;border:2.5px solid var(--cream);box-shadow:0 0 0 1.5px currentColor;z-index:1;}
+.ev-dot.d-hotel{color:var(--indigo);background:var(--indigo);}
+.ev-dot.d-tr{color:#3278C8;background:#3278C8;}
+.ev-dot.d-sight{color:var(--teal);background:var(--teal);}
+.ev-dot.d-food{color:var(--gold);background:var(--gold);}
+.ev-dot.d-train{color:var(--rust);background:var(--rust);}
+
+/* EVENT CARDS */
+.ev-card{background:var(--warm-white);border:1px solid var(--border);border-radius:12px;padding:18px 20px;box-shadow:var(--sh-sm);transition:box-shadow .2s;}
+.ev-card:hover{box-shadow:var(--sh-md);}
+.ev-card.ev-key{border-color:var(--rust);border-width:1.5px;}
+.ev-card.ev-new{border-color:var(--teal-light);background:#FAFFFE;}
+.ev-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.ev-time{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.02em;min-width:66px;line-height:1;}
+.badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:.04em;white-space:nowrap;}
+.b-hotel{background:var(--indigo-pale);color:var(--indigo);}
+.b-tr{background:#E2EEFF;color:#2560A4;}
+.b-sight{background:var(--teal-pale);color:var(--teal);}
+.b-food{background:var(--gold-pale);color:#7A5A18;}
+.b-train{background:var(--rust-pale);color:var(--rust);border:1px solid var(--rust-mid);}
+.b-new{background:var(--teal);color:#fff;}
+.ev-name{font-family:'Noto Serif TC',serif;font-size:19px;font-weight:600;line-height:1.35;margin-bottom:8px;color:var(--ink);}
+.ev-desc{font-size:15px;color:var(--ink-soft);line-height:1.75;}
+.ev-desc .hl{background:var(--gold-pale);padding:0 4px;border-radius:3px;font-weight:500;color:var(--gold);}
+.transit-block{margin-top:12px;padding:10px 14px;background:#EBF2FC;border-radius:8px;border-left:3px solid #3278C8;font-size:14px;color:#1C4A82;line-height:1.7;}
+.transit-block b{font-weight:600;}
+.warn-block{margin-top:10px;padding:10px 14px;background:#FEF2EE;border-radius:8px;border-left:3px solid var(--rust);font-size:14px;color:#8C3010;line-height:1.7;}
+.sp{height:10px;}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(250,247,242,.45);text-align:center;padding:32px 24px;font-size:13px;line-height:1.8;}
+.footer strong{color:var(--gold-light);}
+
+/* MOBILE */
+@media(max-width:600px){
+  body{font-size:17px;}
+  .ev-time{font-size:20px;}
+  .ev-name{font-size:17px;}
+  .ev-card{padding:15px 16px;}
+  .tab-btn{padding:14px 13px 12px;}
+  .timeline{padding-left:28px;}
+  .ev-dot{left:-24px;}
+  .day-card{padding:18px 16px 16px;}
+  .container{padding:0 16px;}
+}
+@media print{
+  .tab-nav{display:none;}
+  .day-panel{display:block!important;page-break-before:always;}
+  body{font-size:13px;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">2025年 5月26日 — 5月30日</div>
+  <h1>日本 <em>北九州</em><br>5天4夜 旅遊行程</h1>
+  <p class="hero-desc">櫛田神社・柳川遊河・太宰府・竈門神社・由布院之森・糸島</p>
+  <div class="hero-hotels">
+    <div class="hero-hotel-tag">🏨 5/26–28 <strong>LIBERATED HOTEL 春吉</strong>・福岡</div>
+    <div class="hero-hotel-tag">🏙️ 5/28–30 <strong>Code Rooms Imaizumi</strong>・今泉</div>
+  </div>
+</div>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showDay(0)">
+    <span class="t-date">5月26日（二）</span><span class="t-name">Day 1 抵達</span>
+  </button>
+  <button class="tab-btn" onclick="showDay(1)">
+    <span class="t-date">5月27日（三）</span><span class="t-name">Day 2 柳川・太宰府</span>
+  </button>
+  <button class="tab-btn" onclick="showDay(2)">
+    <span class="t-date">5月28日（四）</span><span class="t-name">Day 3 由布院之森</span>
+  </button>
+  <button class="tab-btn" onclick="showDay(3)">
+    <span class="t-date">5月29日（五）</span><span class="t-name">Day 4 糸島</span>
+  </button>
+  <button class="tab-btn" onclick="showDay(4)">
+    <span class="t-date">5月30日（六）</span><span class="t-name">Day 5 購物・返台</span>
+  </button>
+</nav>
+
+<!-- ═══ DAY 1 ═══ -->
+<div class="day-panel active" id="day0">
+<div class="container">
+  <div class="day-card">
+    <div class="day-card-top">
+      <div><div class="day-label">DAY 1</div><div class="day-title">抵達福岡 × 櫛田神社 × 藥院燒肉</div></div>
+      <div class="day-date-pill">5月26日（二）</div>
+    </div>
+    <div class="hotel-strip">
+      <span class="hs-icon">🏨</span>
+      <div><div class="hs-name">LIBERATED HOTEL HARUYOSHI KAICHI</div><div class="hs-addr">福岡市中央區春吉 3-24-20・地鐵「渡辺通」站步行 4 分鐘</div></div>
+    </div>
+  </div>
+  <div class="snack-section">
+    <div class="snack-title">🍡 今日沿途推薦</div>
+    <div class="snack-row">
+      <div class="snack-card"><div class="sc-emoji">🍜</div><div class="sc-name">博多めん街道</div><div class="sc-place">博多站 B1</div><div class="sc-desc">10 家人氣拉麵匯聚，抵達後的第一餐最方便，坐下吹冷氣填飽肚。</div></div>
+      <div class="snack-card"><div class="sc-emoji">🐣</div><div class="sc-name">ひよ子本舗吉野堂</div><div class="sc-place">博多站內</div><div class="sc-desc">福岡代表「小雞饅頭」，蛋黃餡香甜，第一天就可以先買好伴手禮。</div><div class="sc-rating">★ 4.1（39則）</div></div>
+      <div class="snack-card"><div class="sc-emoji">🍡</div><div class="sc-name">石村萬盛堂・鶴乃子</div><div class="sc-place">博多・中洲附近</div><div class="sc-desc">明治年間百年老舖，棉花糖造型饅頭，輕盈甜而不膩，老字號必買。</div><div class="sc-rating">★ 4.3（385則）</div></div>
+      <div class="snack-card"><div class="sc-emoji">🥩</div><div class="sc-name">藥院燒肉 NIKUICHI</div><div class="sc-place">藥院・飯店步行 8 分</div><div class="sc-desc">黑毛和牛在地名店，機器人送菜、平板點餐，需提前 TableCheck 訂位！</div><div class="sc-rating">★ 4.5（1,618則）</div></div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="ev-wrap"><div class="ev-dot d-tr"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">15:20</span><span class="badge b-tr">✈ 抵達</span></div>
+        <div class="ev-name">福岡機場（國際線）降落</div>
+        <div class="ev-desc">入境後於地下 1F 購買 <span class="hl">SUGOCA 交通 IC 卡</span>，建議加值 3,000 円備用。全程地鐵、JR、西鐵均可使用。</div>
+        <div class="transit-block">🚇 <b>地鐵空港線</b> 福岡機場 → 天神（約 11 分・260 円）→ 渡辺通站步行 4 分抵飯店｜<b>總計約 30 分鐘</b></div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-hotel"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">16:00</span><span class="badge b-hotel">住宿</span></div>
+        <div class="ev-name">LIBERATED HOTEL — 辦理入住</div>
+        <div class="ev-desc">自助 Check-in，平板操作可選中文，流程簡單。放下行李後輕裝前往櫛田神社。<br><br>⚠️ 此飯店<b>無常駐人員</b>，行李宅配請委託便利商店代寄，勿直接寄至飯店。</div>
+        <div class="transit-block">🚇 <b>地鐵渡辺通站</b> → 中洲川端站（3 分・200 円）→ 步行 5 分至櫛田神社｜<b>總計約 10 分鐘</b></div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card ev-new"><div class="ev-head"><span class="ev-time">16:30</span><span class="badge b-new">✦ 新增</span><span class="badge b-sight">景點</span></div>
+        <div class="ev-name">櫛田神社（お櫛田さん）</div>
+        <div class="ev-desc">福岡最古老的守護神社，是博多祗園山笠祭典的主場！境內全年展示高達 15 公尺的巨大「飾り山笠」山車，氣勢震撼。<br><br>
+          ⛩️ <b>必看：</b>千年樟樹・飾り山笠・干支盤（轉動找自己的生肖）<br>
+          💧 喝境內湧泉「<b>不老長壽之水</b>」，傳說可延年益壽——60歲長輩最適合！<br>
+          🕐 開放時間 09:00–17:00，<b>入場免費</b></div>
+        <div class="transit-block">🚇 <b>地鐵中洲川端</b> → 渡辺通（3 分）→ 步行 8 分至藥院 NIKUICHI</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card ev-key"><div class="ev-head"><span class="ev-time">19:00</span><span class="badge b-food">晚餐</span></div>
+        <div class="ev-name">藥院燒肉 NIKUICHI（薬院焼肉NIKUICHI）</div>
+        <div class="ev-desc">在地口碑最強燒肉，評價 4.5 分（1,618則）。黑毛和牛品質出眾，機器人送菜趣味十足。<br><br>🥩 <b>必點：</b>牛舌・ハラミ（橫隔膜肉）・主廚推薦當日和牛部位</div>
+        <div class="warn-block">⚠️ 強烈建議透過 <b>TableCheck App</b> 提前訂位，現場候位等待時間較長。</div>
+        <div class="transit-block">🚶 <b>步行約 8 分鐘</b>返回 LIBERATED HOTEL（藥院 → 春吉方向）</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-hotel"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">21:00</span><span class="badge b-hotel">住宿</span></div>
+        <div class="ev-name">返回 LIBERATED HOTEL 休息</div>
+        <div class="ev-desc">明日行程柳川→太宰府→竈門神社，需 <span class="hl">08:00 前出發</span>，請早點就寢。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ DAY 2 ═══ -->
+<div class="day-panel" id="day1">
+<div class="container">
+  <div class="day-card">
+    <div class="day-card-top">
+      <div><div class="day-label">DAY 2</div><div class="day-title">柳川遊河 × 太宰府 × 竈門神社 × 中洲屋台 × LOPIA</div></div>
+      <div class="day-date-pill">5月27日（三）</div>
+    </div>
+    <div class="hotel-strip">
+      <span class="hs-icon">🏨</span>
+      <div><div class="hs-name">LIBERATED HOTEL HARUYOSHI KAICHI</div><div class="hs-addr">連住第 2 夜・今日出發基地</div></div>
+    </div>
+  </div>
+  <div class="snack-section">
+    <div class="snack-title">🍡 今日沿途推薦</div>
+    <div class="snack-row">
+      <div class="snack-card"><div class="sc-emoji">🍦</div><div class="sc-name">柳川遊船浮攤</div><div class="sc-place">柳川水道途中</div><div class="sc-desc">遊河途中停靠浮在水上的小販船，可買霜淇淋、飲料，限定體驗！</div></div>
+      <div class="snack-card"><div class="sc-emoji">🐟</div><div class="sc-name">若松屋・鰻魚蒸籠飯</div><div class="sc-place">柳川遊河終點附近</div><div class="sc-desc">柳川最知名鰻魚老舖，米飯吸滿醬香入口即化。週三公休注意！</div><div class="sc-rating">★ 4.3（3,546則）</div></div>
+      <div class="snack-card"><div class="sc-emoji">🍡</div><div class="sc-name">かさの家・梅ヶ枝餅</div><div class="sc-place">太宰府天滿宮參道</div><div class="sc-desc">現烤梅枝糕 130 円，薄脆外皮裹紅豆餡，免費附熱茶，趁熱吃最香。</div><div class="sc-rating">★ 4.4（1,345則）</div></div>
+      <div class="snack-card"><div class="sc-emoji">🔮</div><div class="sc-name">竈門神社・縁結玉籤</div><div class="sc-place">竈門神社境內</div><div class="sc-desc">粉紅水晶球造型籤詩，超可愛，求良緣必抽。鬼滅迷必看繪馬。</div><div class="sc-rating">★ 4.4（5,958則）</div></div>
+      <div class="snack-card"><div class="sc-emoji">🍺</div><div class="sc-name">中洲屋台</div><div class="sc-place">那珂川畔・夜間限定</div><div class="sc-desc">昭和風路邊攤，拉麵・串燒・炒麵。18:00 後開始熱鬧，僅收現金！</div></div>
+      <div class="snack-card"><div class="sc-emoji">🛒</div><div class="sc-name">LOPIA 博多友都八喜店</div><div class="sc-place">博多站・友都八喜 4F</div><div class="sc-desc">超新鮮食材超低價！壽司・生魚片一片不到 100 円。僅收現金。</div><div class="sc-rating">★ 4.2（1,662則）</div></div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="ev-wrap"><div class="ev-dot d-hotel"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">08:00</span><span class="badge b-hotel">出發</span></div>
+        <div class="ev-name">LIBERATED HOTEL 出發</div>
+        <div class="ev-desc">便利商店購買早餐輕食後出發。今日行程柳川→太宰府→竈門神社，全程以西鐵為主，動線順暢。</div>
+        <div class="transit-block">🚶 步行 4 分 → 渡辺通站 → 🚇 <b>地鐵</b> → 天神（3 分）→ 🚃 <b>西鐵天神大牟田線 特急</b> → 柳川站（約 53 分・900 円）</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">09:30</span><span class="badge b-sight">景點</span></div>
+        <div class="ev-name">柳川遊河（川下り）</div>
+        <div class="ev-desc">坐上平底木船穿越 <span class="hl">400 年歷史</span>的水道迷宮，全程約 70 分鐘。<b>全程坐船，長輩完全不耗費體力！</b><br><br>
+          🎵 船夫撐竿唱歌・表演低頭過橋絕技。5 月鳶尾花盛開如畫，途中停靠浮攤可買霜淇淋！<br>
+          🎫 船票約 2,000 円・松月乗船場出發・終點有<b>免費接駁巴士</b>返回柳川站</div>
+        <div class="transit-block">🚌 <b>遊船終點免費接駁巴士</b> → 柳川站（約 10 分）</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">11:30</span><span class="badge b-food">午餐</span></div>
+        <div class="ev-name">柳川名產 — 鰻魚蒸籠飯（せいろ蒸し）</div>
+        <div class="ev-desc">九州知名鰻魚產地，米飯充分吸滿醬汁香氣，入口即化。推薦「若松屋」或「元祖本吉屋」。</div>
+        <div class="warn-block">⚠️ 若松屋<b>週三公休</b>！請事先確認。</div>
+        <div class="transit-block">🚃 <b>西鐵柳川 → 二日市（特急・約 40 分）→ 換太宰府線 → 太宰府站（5 分）</b>｜總計約 50 分・約 900 円</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">13:30</span><span class="badge b-sight">景點</span></div>
+        <div class="ev-name">太宰府天滿宮</div>
+        <div class="ev-desc">供奉學問之神菅原道真，超過 <span class="hl">1,100 年</span>歷史。建築大師<b>隈研吾</b>設計的竹造「仮殿」前衛美麗，本身已是打卡亮點！<br><br>
+          🌸 <b>必看：</b>樹齡 1,000 年「飛梅」<br>
+          🍡 <b>必吃：</b>參道現烤「梅ヶ枝餅」130 円，熱騰騰邊走邊吃，免費附熱茶</div>
+        <div class="transit-block">🚌 <b>太宰府站搭「まほろば号」巴士</b> → 竈門神社（約 15 分・210 円）</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">15:00</span><span class="badge b-sight">景點</span></div>
+        <div class="ev-name">竈門神社（坂本神社）</div>
+        <div class="ev-desc">《鬼滅之刃》聖地！供奉良緣之神，繪馬上滿是手繪鬼滅角色，全日本獨一無二。<br><br>
+          💕 「縁結玉」粉紅水晶球籤詩超可愛，是此行最受歡迎的紀念品。山頂視野開闊清幽，5 月氣溫舒適宜人。</div>
+        <div class="transit-block">🚌 <b>原路搭まほろば号</b>返太宰府站（15 分）→ 🚃 <b>西鐵</b> → 天神（約 35 分）→ 🚇 <b>地鐵</b> → 中洲川端站（2 分）</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">18:00</span><span class="badge b-food">晚餐</span></div>
+        <div class="ev-name">中洲屋台街</div>
+        <div class="ev-desc">那珂川畔昭和風路邊攤，品嚐拉麵・串燒・炒麵，老板親切如昭和年代。<span class="hl">建議 18:00 前排隊，熱門攤位 19:00 後往往客滿。</span></div>
+        <div class="warn-block">⚠️ 屋台<b>僅收現金</b>，請預先備妥日幣現金。</div>
+        <div class="transit-block">🚇 <b>地鐵中洲川端站</b> → 博多站（3 分・200 円）→ 步行 5 分至友都八喜大廈</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">20:00</span><span class="badge b-food">購物</span></div>
+        <div class="ev-name">LOPIA 博多友都八喜店（4F）</div>
+        <div class="ev-desc">日本超市界傳說！超新鮮食材超低價，熟食壽司・生魚片一片不到 100 円。可購買零食或水果。🕗 營業至 21:00</div>
+        <div class="warn-block">⚠️ <b>僅收現金，無免稅服務</b>。大廈內有 ATM 可提款。</div>
+        <div class="transit-block">🚇 博多站 → <b>地鐵</b> → 渡辺通站 → 步行 4 分返回飯店</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-hotel"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">21:30</span><span class="badge b-hotel">住宿</span></div>
+        <div class="ev-name">返回 LIBERATED HOTEL 休息</div>
+        <div class="ev-desc">明日 <span class="hl">09:17 由布院之森發車，不等人！</span>需 07:00 退房，請今晚整理好行李。</div>
+        <div class="warn-block">⚠️ 今晚務必在便利商店辦理行李宅配至 Code Rooms Imaizumi，或準備明日博多站置物櫃方案（大型 900 円）。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ DAY 3 ═══ -->
+<div class="day-panel" id="day2">
+<div class="container">
+  <div class="day-card">
+    <div class="day-card-top">
+      <div><div class="day-label">DAY 3 ★</div><div class="day-title">由布院之森觀光列車 × 金麟湖 × 湯之坪街道</div></div>
+      <div class="day-date-pill">5月28日（四）</div>
+    </div>
+    <div class="hotel-strip" style="background:#F5E4DE;color:#8C3010;">
+      <span class="hs-icon">🔀</span>
+      <div><div class="hs-name" style="color:var(--rust);">今日跨飯店：退房春吉 → 入住今泉</div><div class="hs-addr" style="color:#B84A2A;">行李寄存博多站置物櫃，輕裝搭觀光列車</div></div>
+    </div>
+  </div>
+  <div class="snack-section">
+    <div class="snack-title">🍡 今日沿途推薦</div>
+    <div class="snack-row">
+      <div class="snack-card"><div class="sc-emoji">🍱</div><div class="sc-name">博多站駅弁</div><div class="sc-place">博多站月台旁</div><div class="sc-desc">九州限定鐵道便當，在觀光列車上慢慢享用，旅行感倍增！</div></div>
+      <div class="snack-card"><div class="sc-emoji">☕</div><div class="sc-name">列車 Forest Terrace</div><div class="sc-place">由布院之森吧台車廂</div><div class="sc-desc">車內販售咖啡・抹茶冰淇淋・水果三明治，限量供應，上車前可預訂便當。</div></div>
+      <div class="snack-card"><div class="sc-emoji">🍰</div><div class="sc-name">B-speak 年輪蛋糕</div><div class="sc-place">湯之坪街道</div><div class="sc-desc">由布院最知名甜點，外皮微焦內芯濕潤，排隊名物，早去早買！</div></div>
+      <div class="snack-card"><div class="sc-emoji">🍮</div><div class="sc-name">由布院布丁</div><div class="sc-place">湯之坪街道沿途</div><div class="sc-desc">大分溫泉蒸氣製作，口感細滑甜度適中，街道多家店有售。</div></div>
+      <div class="snack-card"><div class="sc-emoji">🥟</div><div class="sc-name">由布院コロッケ</div><div class="sc-place">湯之坪街道</div><div class="sc-desc">現炸可樂餅，外皮酥脆內餡鬆軟，街道最受歡迎的邊走邊吃小食。</div></div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="ev-wrap"><div class="ev-dot d-hotel"></div>
+      <div class="ev-card ev-key"><div class="ev-head"><span class="ev-time">07:00</span><span class="badge b-hotel">住宿</span></div>
+        <div class="ev-name">LIBERATED HOTEL — 退房</div>
+        <div class="ev-desc"><span class="hl">09:17 由布院之森不等人！</span>退房後行李寄存博多站置物櫃（大型 900 円），輕裝出發。</div>
+        <div class="transit-block">🚶 步行 4 分 → 渡辺通站 → 🚇 <b>地鐵</b> → 博多站（8 分・260 円）｜<b>建議 07:45 前抵達博多站，確認第 6 月台</b></div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">08:00</span><span class="badge b-food">早餐</span></div>
+        <div class="ev-name">博多站早餐 & 購買鐵道便當</div>
+        <div class="ev-desc">博多站 B1「DEITOS」有多家早餐選擇。或購買九州限定駅弁，留在觀光列車上慢慢享用！<br><br>⚠️ <b>09:00 前回到第 6 月台等候上車</b></div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-train"></div>
+      <div class="ev-card ev-key"><div class="ev-head"><span class="ev-time">09:17</span><span class="badge b-train">★ 由布院之森 1 號</span></div>
+        <div class="ev-name">博多站 → 由布院站（全車指定席）</div>
+        <div class="ev-desc">翡翠綠觀光列車，車程約 <span class="hl">2 小時 14 分</span>，<b>11:31 抵達由布院</b>。全車木質設計・大片景觀窗，途經「慈恩瀑布」列車特別減速欣賞壯麗雙層瀑布！<br><br>車內吧台 Forest Terrace 販售咖啡・甜點・伴手禮，旅途本身就是體驗。<br>💺 去程建議選 <b>CD 側座位</b>，欣賞慈恩瀑布角度最佳。</div>
+        <div class="warn-block">⚠️ <b>全車指定席，需提前預訂！</b>持 JR Pass 加付 1,500 円劃位費。票價約 5,890 円。開票日：搭車日前一個月，台灣時間早上 09:00 開搶！</div>
+        <div class="transit-block">🚶 <b>由布院站步行約 5 分</b>至金麟湖方向</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">11:45</span><span class="badge b-sight">景點</span></div>
+        <div class="ev-name">金麟湖（金鱗湖）</div>
+        <div class="ev-desc">由布院最夢幻的景點——湖底同時有溫泉與清泉湧出，5 月湖岸新綠倒映水面，格外清幽。湖畔多家風格咖啡廳，適合長輩坐下喝咖啡靜靜欣賞。</div>
+        <div class="transit-block">🚶 <b>步行約 10 分鐘</b>至湯之坪街道入口</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">12:30</span><span class="badge b-sight">景點 & 午餐</span></div>
+        <div class="ev-name">湯之坪街道（湯の坪街道）</div>
+        <div class="ev-desc">由布院最熱鬧的購物街，全長約 800 公尺，甜點店・咖啡廳・雜貨・手工藝一應俱全！<br><br>
+          🍰 <b>必吃：</b>B-speak 年輪蛋糕・由布院布丁・現炸可樂餅・抹茶冰淇淋<br>
+          🍽️ 午餐可在街道上的大分和牛料理店或咖啡廳解決</div>
+        <div class="warn-block">⚠️ 店家多在 <b>17:00 前關門</b>，請把握購物時間！</div>
+        <div class="transit-block">🚶 步行 10 分返回由布院站 → <b>建議 14:30 前抵達由布院站前巴士總站</b></div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-tr"></div>
+      <div class="ev-card ev-key"><div class="ev-head"><span class="ev-time">15:00</span><span class="badge b-tr">高速巴士 回程</span></div>
+        <div class="ev-name">由布院站前巴士總站 → 博多巴士總站</div>
+        <div class="ev-desc">搭乘「湯布院號（ゆふいん号）」高速巴士返回博多，車程約 <span class="hl">2 小時 30 分</span>，<b>約 17:30 抵達博多</b>。單程 3,250 円，需提前在西鐵官網或 WILLER TRAVEL 預約。<br><br>💡 來回各約 8–12 班，可在巴士上小睡補充體力！</div>
+        <div class="transit-block">🚶 博多巴士總站→博多站取行李 → 🚇 <b>地鐵</b> → 天神・藥院方向 → 步行至 Code Rooms Imaizumi Check-in</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-hotel"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">18:00</span><span class="badge b-hotel">住宿</span></div>
+        <div class="ev-name">Code Rooms Imaizumi — 入住</div>
+        <div class="ev-desc">位於福岡最時髦的今泉街區，公寓型住宿，空間寬敞，附廚房・洗衣機。周邊餐廳咖啡廳林立，步行即可覓食。</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">19:30</span><span class="badge b-food">晚餐</span></div>
+        <div class="ev-name">今泉・藥院周邊晚餐</div>
+        <div class="ev-desc">推薦「とりかわ博多かわっこ」（步行 5 分，評價 4.7 分，雞皮串居酒屋）或「とり乃屋」（西中洲，炭火地雞腿，評價 4.6 分）。充實的一天，好好慰勞自己！</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ DAY 4 ═══ -->
+<div class="day-panel" id="day3">
+<div class="container">
+  <div class="day-card">
+    <div class="day-card-top">
+      <div><div class="day-label">DAY 4</div><div class="day-title">糸島一日遊 — 夫婦岩・海上鳥居・桜井神社・海岸咖啡廳</div></div>
+      <div class="day-date-pill">5月29日（五）</div>
+    </div>
+    <div class="hotel-strip">
+      <span class="hs-icon">🏙️</span>
+      <div><div class="hs-name">Code Rooms Imaizumi - One-Bedroom Apartment</div><div class="hs-addr">福岡市中央區今泉 2-1・連住第 2 夜</div></div>
+    </div>
+    <div class="change-strip">✦ <span>今泉→天神→地鐵筑肥線直通筑前前原，無需換車，約 50 分！計程車接送各景點，不過度拉車。</span></div>
+  </div>
+  <div class="snack-section">
+    <div class="snack-title">🍡 今日沿途推薦</div>
+    <div class="snack-row">
+      <div class="snack-card"><div class="sc-emoji">☕</div><div class="sc-name">café lily</div><div class="sc-place">糸島・百年倉庫改建</div><div class="sc-desc">老倉庫改建的夢幻咖啡廳，招牌冰咖啡絕佳，甜點與可麗露超出水準，強烈推薦。</div><div class="sc-rating">★ 4.4（198則）</div></div>
+      <div class="snack-card"><div class="sc-emoji">🍓</div><div class="sc-name">Beach Cafe SUNSET</div><div class="sc-place">糸島海岸</div><div class="sc-desc">海景露台餐廳，當地草莓大福和檸檬蘇打是招牌。⚠️ 週四公休！</div><div class="sc-rating">★ 4.3（800則）</div></div>
+      <div class="snack-card"><div class="sc-emoji">🌲</div><div class="sc-name">Forest Cafe 緑の音</div><div class="sc-place">糸島山林中</div><div class="sc-desc">在松林裡喝咖啡！九州最獨特的咖啡廳體驗，附近白絲瀑布可短程散步。</div><div class="sc-rating">★ 4.2（359則）</div></div>
+      <div class="snack-card"><div class="sc-emoji">🌊</div><div class="sc-name">Beach Cafe Granmare</div><div class="sc-place">糸島海岸南側</div><div class="sc-desc">面海小食堂，使用糸島在地草莓甜點，海景開闊，步調悠閒適合長輩午餐。</div><div class="sc-rating">★ 4.4（156則）</div></div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">08:30</span><span class="badge b-food">早餐</span></div>
+        <div class="ev-name">今泉附近早午餐咖啡廳</div>
+        <div class="ev-desc">今泉周邊多家時髦早午餐咖啡廳，悠閒用餐後出發。</div>
+        <div class="transit-block">🚇 <b>地鐵空港線（姪浜方向）</b> 天神 → 筑前前原站（約 48 分・670 円）→ 🚕 <b>計程車</b>至夫婦岩（約 15 分・1,200 円）</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">10:00</span><span class="badge b-sight">景點</span></div>
+        <div class="ev-name">夫婦岩（桜井二見ヶ浦）</div>
+        <div class="ev-desc">象徵夫妻緣分的兩塊巨岩以注連繩相連，是九州版伊勢二見浦。地面平坦，長輩漫步完全無障礙，5 月海風宜人，視野遼闊。</div>
+        <div class="transit-block">🚶 <b>步行約 5 分鐘</b>至海上鳥居</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">10:15</span><span class="badge b-sight">景點</span></div>
+        <div class="ev-name">海上鳥居（桜井神社浮鳥居）</div>
+        <div class="ev-desc">罕見的<span class="hl">白色鳥居</span>矗立於海面——之所以是白色而非紅色，因桜井神社供奉的神格特殊，全日本極為罕見！漲潮如浮於水面，退潮可步行近拍。</div>
+        <div class="transit-block">🚶 <b>步行約 15 分鐘</b>至桜井神社本殿</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">10:40</span><span class="badge b-sight">景點</span></div>
+        <div class="ev-name">桜井神社（桜井大神宮）</div>
+        <div class="ev-desc">本殿以罕見的<span class="hl">木質原色</span>建成，莊嚴清幽，境內設有與伊勢神宮齊名的「內宮・外宮」，是九州少見的特殊格局。<br><br>🌿 春季山路有機會遇見<b>野生猴子</b>出沒！（請勿直視對眼）</div>
+        <div class="transit-block">🚕 <b>計程車</b>至 café lily（約 15 分・1,500 円左右）</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">12:00</span><span class="badge b-food">午餐 & 下午茶</span></div>
+        <div class="ev-name">café lily — 百年倉庫咖啡廳午餐</div>
+        <div class="ev-desc">糸島人氣最旺的咖啡廳之一！百年老倉庫改建，外觀斑駁木牆內藏精緻空間。招牌冰咖啡、草莓甜點、可麗露均獲高度好評。<br><br>🍓 糸島草莓是日本頂級產區，5 月尾聲仍有機會品嚐當季最後一批！</div>
+        <div class="transit-block">🚕 <b>計程車</b>至海岸咖啡廳一帶（約 20 分）</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">14:00</span><span class="badge b-sight">景點 & 休息</span></div>
+        <div class="ev-name">糸島海岸漫步 & 海景咖啡廳下午茶</div>
+        <div class="ev-desc">5 月的玄界灘海水清澈湛藍，沿海岸散步心曠神怡。<br><br>
+          🍓 <b>Beach Cafe SUNSET</b>（4.3 分）—— 露台海景絕美，草莓大福是招牌，⚠️ 週四公休<br>
+          🌊 <b>Beach Cafe Granmare</b>（4.4 分）—— 面海小食堂，糸島在地食材，步調悠閒<br>
+          🌲 <b>Forest Cafe 緑の音</b> —— 松林裡喝咖啡，附近白絲瀑布可短程散步，最療癒</div>
+        <div class="transit-block">🚕 <b>計程車</b>至筑前前原站（約 20 分）→ 🚇 <b>筑肥線＋地鐵空港線</b> → 天神（約 48 分）→ 今泉步行返飯店</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">17:30</span><span class="badge b-food">購物</span></div>
+        <div class="ev-name">天神地下街 順路採購伴手禮</div>
+        <div class="ev-desc">返程途中在天神順逛 590 公尺全室內冷氣商街，採買明太子・博多通りもん・伴手禮，不用曬太陽。</div>
+        <div class="transit-block">🚇 天神 → 今泉步行約 5 分 or 地鐵 1 站返回飯店</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">19:30</span><span class="badge b-food">晚餐</span></div>
+        <div class="ev-name">今泉・藥院一帶晚餐</div>
+        <div class="ev-desc">推薦「とりかわ博多かわっこ」（飯店步行 5 分，雞皮串，評價 4.7 分）或今泉商圈各式餐廳。最後一個悠閒夜晚，好好享用！</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-hotel"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">21:00</span><span class="badge b-hotel">住宿</span></div>
+        <div class="ev-name">返回 Code Rooms Imaizumi 休息</div>
+        <div class="ev-desc">明日退房後前往機場，請今晚整理好全部行李，確認所有伴手禮收據保留好（機場退稅用）。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ DAY 5 ═══ -->
+<div class="day-panel" id="day4">
+<div class="container">
+  <div class="day-card">
+    <div class="day-card-top">
+      <div><div class="day-label">DAY 5</div><div class="day-title">博多最後購物 × 返回台灣</div></div>
+      <div class="day-date-pill">5月30日（六）</div>
+    </div>
+    <div class="hotel-strip" style="background:#FEF2EE;color:#8C3010;">
+      <span class="hs-icon">✈️</span>
+      <div><div class="hs-name" style="color:var(--rust);">今日退房，返回福岡機場</div><div class="hs-addr" style="color:#B84A2A;">⚠️ 機場截止辦理登機約 15:20，請務必 13:00 前抵達</div></div>
+    </div>
+  </div>
+  <div class="snack-section">
+    <div class="snack-title">🛍️ 最後採購推薦</div>
+    <div class="snack-row">
+      <div class="snack-card"><div class="sc-emoji">🌶️</div><div class="sc-name">明太子（やまや）</div><div class="sc-place">Canal City / 博多站 / 機場</div><div class="sc-desc">福岡代表食材，附保冷袋各種辣度可選，在地人最推薦品牌。</div></div>
+      <div class="snack-card"><div class="sc-emoji">🍰</div><div class="sc-name">博多通りもん</div><div class="sc-place">博多站・機場</div><div class="sc-desc">西式外皮包白豆沙餡，九州銷售冠軍土產，保存期限長，老少皆宜。</div></div>
+      <div class="snack-card"><div class="sc-emoji">🐣</div><div class="sc-name">ひよ子小雞饅頭</div><div class="sc-place">博多站・機場</div><div class="sc-desc">福岡最具代表性土產，蛋黃餡香甜可愛，最適合當伴手禮。</div></div>
+      <div class="snack-card"><div class="sc-emoji">🧊</div><div class="sc-name">ROYCE 生巧克力</div><div class="sc-place">福岡機場免稅店</div><div class="sc-desc">機場有附保冷劑的旅行包裝，比外面便宜，種類多，最適合禮物。</div></div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">08:30</span><span class="badge b-food">早餐</span></div>
+        <div class="ev-name">今泉附近早餐，整理退房</div>
+        <div class="ev-desc">從容用完早餐後整理行李退房。</div>
+        <div class="transit-block">🚇 <b>步行或地鐵</b>至博多站（約 10 分）→ 行李寄存博多站置物櫃</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-sight"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">10:00</span><span class="badge b-sight">購物</span></div>
+        <div class="ev-name">Canal City 博多 & 博多阪急 最後採購</div>
+        <div class="ev-desc">定時噴水廣場表演，逛街環境舒適不悶熱。採買明太子・博多通りもん・ROYCE 生巧・九州限定零食。</div>
+        <div class="warn-block">⚠️ 請在 <b>12:00 前</b>完成購物，準備前往車站用午餐。</div>
+        <div class="transit-block">🚶 步行 5 分 → 博多站 B1「博多めん街道」</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-food"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">12:00</span><span class="badge b-food">午餐</span></div>
+        <div class="ev-name">博多站「博多めん街道」— 最後一碗拉麵</div>
+        <div class="ev-desc">10 多家人氣拉麵店齊聚地下街，座位舒適・冷氣充足。最後一次博多拉麵，好好品味！</div>
+        <div class="warn-block">⚠️ <b>12:45 前</b>用餐完畢，前往搭地鐵。</div>
+        <div class="transit-block">🚇 <b>博多站地鐵空港線</b> → 福岡空港站（<b>僅 5 分鐘・210 円</b>）——日本離市區最近的國際機場之一！</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-tr"></div>
+      <div class="ev-card"><div class="ev-head"><span class="ev-time">13:00</span><span class="badge b-tr">機場</span></div>
+        <div class="ev-name">福岡機場 — 退稅 & 辦理登機</div>
+        <div class="ev-desc">📋 國際線 3F 退稅窗口，購物滿 5,000 円可退稅，<span class="hl">記得保留全部收據！</span>退稅需在出關前辦理。<br><br>辦理登機 → 通過安檢 → 機場免稅店最後補貨（松本清・唐吉訶德均在機場內）。</div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <div class="ev-wrap"><div class="ev-dot d-train"></div>
+      <div class="ev-card ev-key"><div class="ev-head"><span class="ev-time">16:20</span><span class="badge b-train">✈ 起飛</span></div>
+        <div class="ev-name">福岡機場 — 起飛返回台灣</div>
+        <div class="ev-desc">帶著滿滿的回憶與戰利品，平安返回台灣！旅途愉快，一路順風 🎌</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="footer">
+  <p>北九州 5天4夜 旅遊行程｜<strong>2025年 5月26日 — 5月30日</strong></p>
+  <p style="margin-top:5px;">如有任何問題，請隨時查詢飯店前台或撥打日本旅遊諮詢專線。</p>
+</div>
+
+<script>
+function showDay(index){
+  document.querySelectorAll('.day-panel').forEach((p,i)=>p.classList.toggle('active',i===index));
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===index));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
